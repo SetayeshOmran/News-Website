@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <!-- Bootstrap 5 CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N"
+      crossorigin="anonymous"
+    />
+
+    <title>KEYOU</title>
+  </head>
+  <body>
+    <!-- header -->
+
+    <div class="bg-warning cont-tarikh">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg bg-dark rounded-header">
+          <a class="navbar-brand ms-5" href="./index.html">
+            <img src="img/logo.svg" alt="" />
+          </a>
+
+          <span class="ms-5 d tarikh" style="z-index: 99999">
+            <div class="text-light tarikh-font">تاریخ امروز</div>
+            <div class="tarikh-color tarikh-font">سه شنبه 17 شهریور</div>
+          </span>
+
+          <div class="mx-auto ms-5 d-none d-lg-flex">
+            <nav class="navbar">
+              <form>
+                <div
+                  class="input-group mx-5 p-1 rounded"
+                  style="background-color: rgb(50, 50, 50)"
+                >
+                  <input
+                    size="20"
+                    type="text"
+                    class="form-control px-0 px-xl-5 bg-search text-black-50 border border-0 mx-5"
+                    placeholder="متن مورد نظر را جستجو کنید..."
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                  <span
+                    class="input-group-text border border-0 bg-search"
+                    id="basic-addon1"
+                    ><i class="SearchIcon text-white fs-5 bi bi-search"></i
+                  ></span>
+                </div>
+              </form>
+            </nav>
+          </div>
+
+          <div class="d-flex justify-content-center align-content-start">
+            <button class="btn enter text-light border border-0">
+              <span
+                ><svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 17 17"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.27344 10.3558L10.0868 8.54246L8.27344 6.72913"
+                    stroke="white"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M2.8335 8.54248H10.0372"
+                    stroke="white"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8.5 2.83337C11.6308 2.83337 14.1667 4.95837 14.1667 8.50004C14.1667 12.0417 11.6308 14.1667 8.5 14.1667"
+                    stroke="white"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+              <span class="mx-2">ورود به حساب </span>
+            </button>
+          </div>
+        </nav>
+      </div>
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary mt-1 py-3 bg-warning"
+      >
+        <div class="container-fluid ms-5">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="margin-icon">
+              <svg
+                width="20"
+                height="18"
+                viewBox="0 0 15 13"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0.572754 6.53169C0.572754 6.22565 0.838588 5.97754 1.1665 5.97754H13.8329C14.1608 5.97754 14.4266 6.22565 14.4266 6.53169C14.4266 6.83773 14.1608 7.08585 13.8329 7.08585H1.1665C0.838588 7.08585 0.572754 6.83773 0.572754 6.53169ZM3.17185 11.7038C3.17185 11.3978 3.43768 11.1497 3.7656 11.1497H13.8332C14.1611 11.1497 14.4269 11.3978 14.4269 11.7038C14.4269 12.0098 14.1611 12.258 13.8332 12.258H3.7656C3.43768 12.258 3.17185 12.0098 3.17185 11.7038ZM7.67551 1.35958C7.67551 1.05353 7.94135 0.80542 8.26926 0.80542H13.8332C14.1611 0.80542 14.4269 1.05353 14.4269 1.35958C14.4269 1.66562 14.1611 1.91373 13.8332 1.91373H8.26926C7.94135 1.91373 7.67551 1.66562 7.67551 1.35958Z"
+                  fill="#202020"
+                />
+              </svg>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a
+                class="nav-link text-dark ms-2 ms-xl-5 hover-nav fw-bold mt-2"
+                aria-current="page"
+                href="index.html"
+              >
+                صفحه اصلی
+              </a>
+
+              <a
+                class="nav-link text-dark mx-2 hover-nav fw-bold mt-2"
+                href="blog.html"
+                >مقالات</a
+              >
+              <a
+                class="nav-link text-dark mx-3 hover-nav fw-bold mt-2"
+                aria-disabled="true"
+                href="singleblog.html"
+              >
+                <span class="border-bottom border-dark border-2">
+                  پرونده های اماری
+                </span>
+              </a>
+
+              <a
+                class="nav-link text-dark mx-3 hover-nav fw-bold mt-2"
+                href="poll.html"
+              >
+                نظر سنجی
+              </a>
+              <a
+                class="nav-link text-dark mx-3 hover-nav fw-bold mt-2"
+                href="AboutUs.html"
+                >درباره ما</a
+              >
+              <a
+                class="nav-link text-dark ms-3 hover-nav fw-bold mt-2"
+                href="ContactUs.html"
+                >ارتباط با ما</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- end header -->
+
+    <!-- section1 -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12 col-xl-8">
+          <div class="col-12 text-black-50 font-section1">
+            سیاست - دوشنبه ۲۳ اردیبهشت ۱۴۰۲
+          </div>
+          <div class="col-12 fs-3 mt-2 fw-bold fontbold">
+            نگاه نخبگان آمریکایی به مسأله اسرائیل
+          </div>
+        </div>
+        <div class="col-12 col-xl-4 mt-3 d-flex justify-content-end gap-2">
+          <i class="bi bi-telegram text-yellow fs-3 m-1"></i>
+          <i class="bi bi-twitter text-yellow fs-3 m-1"></i>
+          <i class="bi bi-facebook text-yellow fs-3 m-1"></i>
+          <i class="bi bi-whatsapp text-yellow fs-3 m-1"></i>
+        </div>
+      </div>
+    </div>
+    <!-- end section1 -->
+
+    <!-- section2 -->
+    <div class="container">
+      <div class="row mt-5 font-section1 text-black-50 mx-3">
+        نگاه نخبگان یک کشور در موضوعات مختلف، می‌تواند دریچه‌ای برای فهم دیدگاه
+        بخشی از آن جامعه باشد. چرا که در زنجیرۀ ساخت نگرش‌های فردی، نخبگان
+        جایگاه مهم و اثرگذاری دارنـد. در این گزارش که تـــوسط تیـــم پژوهش و
+        رسانه مؤسسه کیو ترجمه و تدوین شده است، یافته‌های مرتبــط با نگاه نخبگان
+        آمریکایی درباره رژیم اسرائیل ارائه خواهد شد. این پژوهش همکاری مشترک
+        دانشگاه مریلند و دانشگـــاه جرج واشنگتن آمریکا و بر اساس مصاحبه با اعضای
+        انجمن مطالعات خاورمیانه، اعضای بخش خـــاورمیانه و شمال آفریقای انجمــن
+        علوم سیاســـــی آمریکا، اعضای مرتبط با پروژه علوم سیاسی خاورمیانه در
+        دانشگاه جرج واشنگتن و همچنین انجمن تاریخ آمریکا، در مارس ۲۰۲۲ اجرا شده
+        است. در مجموع حدود ۶۰۰ نفر از پژوهشگران این مراکز به نظرسنجی مورد اشاره
+        پاسخ داده‌اند که یافته‌های این نظرسنجی، بازتاب دهندۀ بخشی از نگاه نخبگان
+        آمریکایی پیرامون موضوعات مربوط به خاورمیانه است.
+      </div>
+
+      <div class="row my-3 justify-content-between dir mx-3">
+        <div class="col-12 col-xl-5 dirr my-3">
+          <img
+            class="img-fluid rounded-slide h-100 w-100"
+            src="img/blog1.png"
+            alt=""
+          />
+        </div>
+        <div class="col-12 col-xl-6 font-section1 text-black-50 my-1 dirr">
+          بر اساس یــافته‌های این نظرسنـجی، ۶۰ درصد از پاسخگویان، رژیم اسرائیل
+          را یک رژیم آپـــــارتاید توصیف می‌کنند. پاسخگویان به این نظرسنـجی در
+          پاسخ به این سوال که وضعیت فعلی در اســرائیل، کرانه باختری و غزه را
+          چگونه توصـــــیف می‌کنید، پاسخ داده‌اند. بر ایــــــن اساس ۶۰ درصد از
+          افراد وضعیــــت موجود را وجـــود یک دولت آپارتاید توصـــیف کرده‌اند .
+          ۱۰ درصد از پاسخگـــویان هم وضعیــــت فعلی را وجود یک دولت با رویکــردی
+          نابرابرانه ولی نه در حد آپارتاید توصیف کرده‌اند. شایـان ذکر است که این
+          نظرسنجی پیش از این در سپتــــامبر و فوریه ۲۰۲۱ نیز انجام شده و در آن
+          دو بر اساس یــافته‌های این نظرسنـجی، ۶۰ درصد از پاسخگویان، رژیم
+          اسرائیل را یک رژیم آپـــــارتاید توصیف می‌کنند. پاسخگویان به این
+          نظرسنـجی در پاسخ به این سوال که وضعیت فعلی در اســرائیل، کرانه باختری
+          و غزه را چگونه توصـــــیف می‌کنید، پاسخ داده‌اند. بر ایــــــن اساس ۶۰
+          درصد از افراد وضعیــــت موجود را وجـــود یک دولت آپارتاید توصـــیف
+          کرده‌اند . ۱۰ درصد از پاسخگـــویان هم وضعیــــت فعلی را وجود یک دولت
+          با رویکــردی نابرابرانه ولی نه در حد آپارتاید توصیف کرده‌اند. شایـان
+          ذکر است که این نظرسنجی پیش از این در سپتــــامبر و فوریه ۲۰۲۱ نیز
+          انجام شده و در آن دو و غزه را چگونه توصـــــیف می‌کنید، پاسخ داده‌اند.
+          بر ایــــــن اساس ۶۰ درصد از افراد وضعیــــت موجود را وجـــود یک دولت
+          آپارتاید توصـــیف کرده‌اند . ۱۰ درصد از پاسخگـــویان هم وضعیــــت فعلی
+          را وجود یک دولت با رویکــردی نابرابرانه ولی نه در حد آپارتاید توصیف
+          کرده‌اند. شایـان ذکر است که این نظرسنجی پیش از این در سپتــــامبر و
+          فوریه ۲۰۲۱ نیز انجام شده و در آن دو با رویکــردی نابرابرانه ولی نه در
+          حد آپارتاید توصیف کرده‌اند. شایـان ذکر است که این نظرسنجی پیش از این
+          در سپتــــامبر و فوریه ۲۰۲۱ نیز انجام شده و در آن دو با رویکــردی
+          نابرابرانه ولی نه در حد آپارتاید توصیف کرده‌اند. شایـان ذکر است که این
+          نظرسنجی پیش از این در سپتــــامبر و فوریه ۲۰۲۱ نیز انجام شده و در آن
+          دو
+        </div>
+      </div>
+      <div class="row font-section1 text-black-50 mt-4 mx-3">
+        نگاه نخبگان یک کشور در موضوعات مختلف، می‌تواند دریچه‌ای برای فهم دیدگاه
+        بخشی از آن جامعه باشد. چرا که در زنجیرۀ ساخت نگرش‌های فردی، نخبگان
+        جایگاه مهم و اثرگذاری دارنـد. در این گزارش که تـــوسط تیـــم پژوهش و
+        رسانه مؤسسه کیو ترجمه و تدوین شده است، یافته‌های مرتبــط با نگاه نخبگان
+        آمریکایی درباره رژیم اسرائیل ارائه خواهد شد. این پژوهش همکاری مشترک
+        دانشگاه مریلند و دانشگـــاه جرج واشنگتن آمریکا و بر اساس مصاحبه با اعضای
+        انجمن مطالعات خاورمیانه، اعضای بخش خـــاورمیانه و شمال آفریقای انجمــن
+        علوم سیاســـــی آمریکا، اعضای مرتبط با پروژه علوم سیاسی خاورمیانه در
+        دانشگاه جرج واشنگتن و همچنین انجمن تاریخ آمریکا، در مارس ۲۰۲۲ اجرا شده
+        است. در مجموع حدود ۶۰۰ نفر از پژوهشگران این مراکز به نظرسنجی مورد اشاره
+        پاسخ داده‌اند که یافته‌های این نظرسنجی، بازتاب دهندۀ بخشی از نگاه نخبگان
+        آمریکایی پیرامون موضوعات مربوط به خاورمیانه است.
+      </div>
+    </div>
+    <!--end section2 -->
+
+    <!-- section3 -->
+
+    <div class="container my-5 shadow-lg rounded-slide py-5 ps-5">
+      <div class="row justify-content-center">
+        <div class="row justify-content-end align-content-center">
+          <div class="col-xl-8 col-12 fs-5 fontbold">
+            نمودار تعداد نخبگان آمریکایی به مسأله اسرائیل
+          </div>
+          <div class="col-12 d-xl-none font-section1 text-black-50">
+            ایران اینترنشنال
+          </div>
+          <div
+            class="col-xl-4 d-flex justify-content-end align-content-center d-none d-xl-flex cont-tab"
+          >
+            <div
+              style="margin-left: -14% !important"
+              class="col-5 bg-dark d-flex justify-content-end p-3 px-4 img-logo"
+            >
+              <img src="img/logo.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="row font-section1 text-black-50 mt-4">
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+          استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+          ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+          کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+        </div>
+
+        <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
+          <li class="nav-item lie" role="presentation">
+            <button
+              class="nav-link active_tab tabHover"
+              id="home-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#home"
+              type="button"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true"
+            >
+              نمودار
+            </button>
+          </li>
+          <li class="nav-item lie" role="presentation">
+            <button
+              class="nav-link tabHover"
+              id="profile-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#profile"
+              type="button"
+              role="tab"
+              aria-controls="profile"
+              aria-selected="false"
+            >
+              نقشه
+            </button>
+          </li>
+          <li class="nav-item lie" role="presentation">
+            <button
+              class="nav-link tabHover"
+              id="contact-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#contact"
+              type="button"
+              role="tab"
+              aria-controls="contact"
+              aria-selected="false"
+            >
+              جدول
+            </button>
+          </li>
+          <li class="nav-item lie" role="presentation">
+            <button
+              class="nav-link tabHover"
+              id="source-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#source"
+              type="button"
+              role="tab"
+              aria-controls="source"
+              aria-selected="false"
+            >
+              منبع اطلاعات
+            </button>
+          </li>
+          <div
+            class="tab-up d-flex d-none d-xl-flex justify-content-center align-items-center"
+          >
+            <li class="nav-item dropdown lie">
+              <a
+                class="nav-link"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-expanded="false"
+              >
+                <i
+                  class="bi bi-share fs-4"
+                  style="color: rgb(121, 121, 121)"
+                ></i>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="lie">
+                  <a class="dropdown-item" href="#">twiter</a>
+                </li>
+                <li class="lie">
+                  <a class="dropdown-item" href="#">facebook</a>
+                </li>
+                <li class="lie">
+                  <a class="dropdown-item" href="#">copy link</a>
+                </li>
+
+                <li class="lie">
+                  <a class="dropdown-item" href="#">Share via...</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item lie" role="presentation">
+              <button
+                class="nav-link text-black-50 btn-down"
+                id="download-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#download"
+                type="button"
+                role="tab"
+                aria-controls="download"
+                aria-selected="false"
+              >
+                <i class="bi bi-download fs-3"></i>
+              </button>
+            </li>
+          </div>
+        </ul>
+        <div class="tab-content p-5" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="home"
+            role="tabpanel"
+            aria-labelledby="home-tab"
+          >
+            <div class="col-12 d-flex justify-content-center">
+              <canvas
+                id="myChart"
+                style="width: 100%; max-width: 700px"
+              ></canvas>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="profile"
+            role="tabpanel"
+            aria-labelledby="profile-tab"
+          >
+            <div class="col-12 d-flex justify-content-center">
+              <div class="body-map">
+                <div class="container-map">
+                  <iframe
+                    width="900"
+                    height="350"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093986!2d144.9537353153162!3d-37.8162792797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d5df1f7df%3A0x2f13fdb3f1f48df!2sMelbourne%2C+Victoria%2C+Australia!5e0!3m2!1sen!2s!4v1633080661393!5m2!1sen!2s"
+                    allowfullscreen=""
+                    loading="lazy"
+                  >
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="contact"
+            role="tabpanel"
+            aria-labelledby="contact-tab"
+          >
+            <div class="col-12 d-flex justify-content-center">
+              <div class="table-responsive">
+                <table
+                  class="table table-hover text-center shadow-lg rounded-3 custom-table"
+                >
+                  <thead>
+                    <tr>
+                      <th scope="col text-white">منطقه خود کامگی های بسته</th>
+                      <th scope="col">استبداد انتخاباتی</th>
+                      <th scope="col">لیبرال دموکراسی</th>
+                      <th scope="col">کشور</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>2342</td>
+                      <td>2342</td>
+                      <td>2342</td>
+                      <th>چین</th>
+                    </tr>
+                    <tr>
+                      <td>2342</td>
+                      <td>23456</td>
+                      <td>4654</td>
+                      <th>کره شمالی</th>
+                    </tr>
+                    <tr>
+                      <td>2342</td>
+                      <td>23456</td>
+                      <td>4654</td>
+                      <th>افغانستان</th>
+                    </tr>
+                    <tr>
+                      <td>2342</td>
+                      <td>2342</td>
+                      <td>2342</td>
+                      <th>ایالات متحده</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="source"
+            role="tabpanel"
+            aria-labelledby="source-tab"
+          >
+            <div class="col-12 d-flex justify-content-center mt-5">
+              <p>
+                lorem100 Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Vero nisi reiciendis explicabo quod tenetur, esse suscipit
+                dolorem doloremque. Nihil perspiciatis eius cumque tempora vel
+                amet earum veniam numquam consequuntur eos!
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="tab-pane fade"
+            id="download"
+            role="tabpanel"
+            aria-labelledby="download-tab"
+          >
+            <div class="col-12 d-flex justify-content-center mt-3">
+              <div
+                class="row justify-content-center align-content-center align-self-center"
+              >
+                <div class="col-7 text-end fs-3 fw-bold">chart</div>
+                <div
+                  class="col-7 d-flex justify-content-around align-self-center border p-4"
+                  style="
+                    background-color: rgba(219, 219, 219, 0.474);
+                    border-radius: 8px;
+                    cursor: pointer;
+                  "
+                >
+                  <div class="col-2">
+                    <button
+                      class="nav-link text-black-50 btn-down"
+                      id="download-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#download"
+                      type="button"
+                      role="tab"
+                      aria-controls="download"
+                      aria-selected="false"
+                    >
+                      <i class="bi bi-download fs-3"></i>
+                    </button>
+                  </div>
+                  <div class="col-8 me-3">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Omnis necessitatibus magni
+                  </div>
+                  <div class="col-2">
+                    <img class="img-fluid" src="img/naghshe.jpg" alt="" />
+                  </div>
+                </div>
+                <div
+                  class="col-7 d-flex justify-content-around align-self-center border p-4 mt-2"
+                  style="
+                    background-color: rgba(219, 219, 219, 0.474);
+                    border-radius: 8px;
+                    cursor: pointer;
+                  "
+                >
+                  <div class="col-2">
+                    <button
+                      class="nav-link text-black-50 btn-down"
+                      id="download-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#download"
+                      type="button"
+                      role="tab"
+                      aria-controls="download"
+                      aria-selected="false"
+                    >
+                      <i class="bi bi-download fs-3"></i>
+                    </button>
+                  </div>
+                  <div class="col-8 me-3">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Omnis necessitatibus magni
+                  </div>
+                  <div class="col-2">
+                    <img class="img-fluid" src="img/naghshe.jpg" alt="" />
+                  </div>
+                </div>
+                <div class="col-7 text-end fs-3 fw-bold mt-5">data</div>
+                <div
+                  class="col-7 d-flex justify-content-around align-self-center border p-4"
+                  style="
+                    background-color: rgba(219, 219, 219, 0.474);
+                    border-radius: 8px;
+                    cursor: pointer;
+                  "
+                >
+                  <div class="col-2">
+                    <button
+                      class="nav-link text-black-50 btn-down"
+                      id="download-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#download"
+                      type="button"
+                      role="tab"
+                      aria-controls="download"
+                      aria-selected="false"
+                    >
+                      <i class="bi bi-download fs-3"></i>
+                    </button>
+                  </div>
+                  <div class="col-10 text-end me-3">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Omnis necessitatibus magni
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end section3 -->
+
+    <!-- section4 -->
+    <div class="container mb-5 mt-5">
+      <div class="row text-black-50 font-section1">
+        نگاه نخبگان یک کشور در موضوعات مختلف، می‌تواند دریچه‌ای برای فهم دیدگاه
+        بخشی از آن جامعه باشد. چرا که در زنجیرۀ ساخت نگرش‌های فردی، نخبگان
+        جایگاه مهم و اثرگذاری دارنـد. در این گزارش که تـــوسط تیـــم پژوهش و
+        رسانه مؤسسه کیو ترجمه و تدوین شده است، یافته‌های مرتبــط با نگاه نخبگان
+        آمریکایی درباره رژیم اسرائیل ارائه خواهد شد. این پژوهش همکاری مشترک
+        دانشگاه مریلند و دانشگـــاه جرج واشنگتن آمریکا و بر اساس مصاحبه با اعضای
+        انجمن مطالعات خاورمیانه، اعضای بخش خـــاورمیانه و شمال آفریقای انجمــن
+        علوم سیاســـــی آمریکا، اعضای مرتبط با پروژه علوم سیاسی خاورمیانه در
+        دانشگاه جرج واشنگتن و همچنین انجمن تاریخ آمریکا، در مارس ۲۰۲۲ اجرا شده
+        است. در مجموع حدود ۶۰۰ نفر از پژوهشگران این مراکز به نظرسنجی مورد اشاره
+        پاسخ داده‌اند که یافته‌های این نظرسنجی، بازتاب دهندۀ بخشی از نگاه نخبگان
+        آمریکایی پیرامون موضوعات مربوط به خاورمیانه است.
+      </div>
+    </div>
+    <!-- end section4 -->
+
+    <!-- section5 -->
+    <div class="container my-5">
+      <div
+        class="row shadow-sm rounded-slide p-2 align-content-center"
+        style="background-color: rgba(222, 222, 222, 0.229)"
+      >
+        <div
+          class="col-12 col-xl-8 text-black-50 font-section1 d-flex align-self-center"
+        >
+          سیاست - دوشنبه ۲۳ اردیبهشت ۱۴۰۲
+        </div>
+        <div class="col-xl-4 col-12 d-flex justify-content-end gap-1">
+          <i class="bi bi-telegram text-yellow fs-4 m-1"></i>
+          <i class="bi bi-twitter text-yellow fs-3 m-1"></i>
+          <i class="bi bi-facebook text-yellow fs-4 m-1"></i>
+          <i class="bi bi-whatsapp text-yellow fs-4 m-1"></i>
+        </div>
+      </div>
+    </div>
+    <!--end section5 -->
+
+    <!-- section6 -->
+    <div class="container my-5">
+      <div class="row my-4 justify-content-center align-content-center">
+        <div
+          class="col-4 col-lg-2 fw-bolder fs-6 d-flex align-self-center justify-content-center"
+        >
+          آخرین پایش ها
+        </div>
+        <div
+          class="col-4 mt-2 col-lg-8 border-top border-2 border-warning"
+        ></div>
+        <div class="col-4 col-lg-2 d-flex justify-content-center">
+          <button
+            class="btn btn-sm border border-1 rounded rounded-pill btn-outline-dark"
+          >
+            مشاهده بیشتر
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 d-none d-lg-flex">
+          <div class="cont">
+            <img
+              class="img-fluid w-100 h-100 rounded-slide"
+              src="img/img5.jpg"
+              alt=""
+            />
+
+            <div class="bottom-right fs-5">
+              <button class="btn btn-light rounded-btn text-black-50 btn-sm">
+                محیط زیست
+              </button>
+              <span class="text-white-50">شهریور ۱۴۰۱ - ۲۳:۳۰</span>
+              <div class="mt-2">
+                کشورهای توسعه‌یافته‌ رضایت بیشتری به وضعیت آب‌و‌هوا دارند
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-12 col-lg-6 justify-content-center align-content-center align-self-center"
+        >
+          <div class="col-12 d-flex">
+            <div class="col-lg-6 d-flex col-12 cardNews">
+              <span class="col-6">
+                <img
+                  class="w-75 h-100 rounded rounded-2"
+                  src="img/img6.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="col-6">
+                <div
+                  class="col-4 border-top border-3 border-warning mt-2"
+                ></div>
+                <div class="text-black-50 mt-2">شهریور ۱۴۰۱ - ۲۳:۳۰</div>
+                <div class="mt-2">بخشنده‌ترین کشورهای دنیا</div>
+              </span>
+            </div>
+            <div class="col-6 d-flex d-none d-lg-flex cardNews">
+              <span class="col-6">
+                <img
+                  class="w-75 h-100 rounded rounded-2"
+                  src="img/img7.jpg"
+                  alt=""
+                />
+              </span>
+
+              <span class="col-6">
+                <div
+                  class="col-4 border-top border-3 border-warning mt-2"
+                ></div>
+                <div class="text-black-50 mt-2">شهریور ۱۴۰۱ - ۲۳:۳۰</div>
+                <div class="mt-2">شاخص فساد در جهان چقدر است؟</div>
+              </span>
+            </div>
+          </div>
+          <div class="col-12 d-flex mt-5">
+            <div class="col-lg-6 col-12 d-flex cardNews">
+              <span class="col-6">
+                <img
+                  class="w-75 h-100 rounded rounded-2"
+                  src="img/img8.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="col-6">
+                <div
+                  class="col-4 border-top border-3 border-warning mt-2"
+                ></div>
+                <div class="text-black-50 mt-2">شهریور ۱۴۰۱ - ۲۳:۳۰</div>
+                <div class="mt-2">عملکرد ضعیف دانش‌آموزان ایرانی</div>
+              </span>
+            </div>
+            <div class="col-6 d-flex d-none d-lg-flex cardNews">
+              <span class="col-6">
+                <img
+                  class="w-75 h-100 rounded rounded-2"
+                  src="img/img9.png"
+                  alt=""
+                />
+              </span>
+
+              <span class="col-6">
+                <div
+                  class="col-4 border-top border-3 border-warning mt-2"
+                ></div>
+                <div class="text-black-50 mt-2">شهریور ۱۴۰۱ - ۲۳:۳۰</div>
+                <div class="mt-2">وضعیت خراب سینما در دنیا</div>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end section6 -->
+
+    <!-- footer -->
+    <div class="container-fluid py-5" style="background-color: rgb(70, 70, 70)">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-2 ms-2 text-center">
+            <img class="img-fluid" src="/img/logo.svg" alt="" />
+          </div>
+          <div
+            class="col-9 d-none d-lg-block text-white-50 lead"
+            style="font-size: 13px"
+          >
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+            <span class="text-warning Continue">مشاهده بیشتر....</span>
+          </div>
+        </div>
+        <div
+          class="row justify-content-center align-items-center text-center mt-4"
+        >
+          <div class="col-3 d-xl-none"><hr class="text-warning" /></div>
+          <div class="col-4 col-xl-2 text-warning text-nowrap">
+            ارتباط با ما
+          </div>
+          <div class="col-3 col-xl-3"><hr class="text-warning" /></div>
+          <div
+            class="col-2 text-center justify-content-center text-warning d-none d-xl-flex"
+          >
+            نماد های الکترونیک
+          </div>
+          <div class="col-3"><hr class="text-warning d-none d-xl-flex" /></div>
+          <div class="col-2 text-warning d-none d-xl-flex">لینک های مفید</div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-6 col-xl-3 mb-5">
+            <div class="row">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i class="text-white fs-4 bi-house-door-fill"></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">آدرس دفتر:</div>
+                <div class="fontt-footer text-nowrap">
+                  تهران خیابان آزادی کوچ...
+                </div>
+              </span>
+            </div>
+            <div class="row mt-5">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i class="text-white fs-4 bi bi-telephone-fill"></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">تلفن دفتر:</div>
+                <div class="font-footer text-nowrap">۰۲۱ - ۳۱۴۹۳۲۵۷</div>
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-xl-3 mb-5">
+            <div class="row">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i class="text-white fs-2 bi bi-headphones"></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">پشتیبانی:</div>
+                <div class="font-footer">۰۹۱۲۳۴۵۶۷۸۹</div>
+              </span>
+            </div>
+            <div class="row mt-5">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i class="text-white fs-4 bi bi-envelope-fill"></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">آدرس ایمیل:</div>
+                <div class="font-footer" style="font-size: 13px">
+                  Info@Keyou.com
+                </div>
+              </span>
+            </div>
+          </div>
+          <div
+            class="col-2 d-none d-xl-flex align-self-center"
+            style="margin-right: -7rem"
+          >
+            <img
+              class="img-fluid w-50 m-2 rounded-3"
+              src="img/img21.png"
+              alt=""
+            />
+            <img
+              class="img-fluid w-50 m-2 rounded-3"
+              src="img/img211.png"
+              alt=""
+            />
+          </div>
+          <div
+            class="row d-xl-none mb-3 justify-content-center align-items-center text-center mt-4"
+          >
+            <div class="col-3 d-xl-none"><hr class="text-warning" /></div>
+            <div class="col-4 col-xl-2 text-warning text-nowrap">
+              لینک های مفید
+            </div>
+            <div class="col-3 col-xl-3"><hr class="text-warning" /></div>
+          </div>
+          <div
+            class="col-6 col-xl-2 d-flex justify-content-center justify-content-xl-end align-self-center"
+          >
+            <ul class="text-white">
+              <li class="text-nowrap">گزارش خرابی سایت</li>
+              <li>مجله های آماری</li>
+              <li>مقالات</li>
+            </ul>
+          </div>
+          <div
+            class="col-6 col-xl-2 d-flex justify-content-center justify-content-xl-end align-self-center"
+          >
+            <ul class="text-white">
+              <li class="text-nowrap">سوالات متداول</li>
+              <li>درباره ما</li>
+              <li>تماس با ما</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center dir">
+          <div class="col-12 mt-5 col-xl-3 text-center text-xl-end dirr">
+            <i class="bi bi-telegram text-white fs-4 m-1"></i>
+            <i class="bi bi-twitter text-white fs-4 m-1"></i>
+            <i class="bi bi-facebook text-white fs-4 m-1"></i>
+            <i class="bi bi-whatsapp text-white fs-4 m-1"></i>
+          </div>
+          <div class="col-12 mt-5 col-xl-9 dirr text-center text-xl-start">
+            <span class="text-white-50">تمامی حقوق این وبسایت برای تیم </span>
+            <span class="text-white">کیو</span>
+            <span class="text-white-50"> محفوظ است</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--end footer -->
+    <!--Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- chartjs javascript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <!-- script for chart config -->
+    <script>
+      const xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+      new Chart("myChart", {
+        type: "line",
+        data: {
+          labels: xValues,
+          datasets: [
+            {
+              data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+              borderColor: "red",
+              fill: false,
+            },
+            {
+              data: [
+                1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000,
+              ],
+              borderColor: "green",
+              fill: false,
+            },
+            {
+              data: [300, 2000, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+              borderColor: "yellow",
+              fill: false,
+            },
+          ],
+        },
+        options: {
+          legend: { display: false },
+        },
+      });
+    </script>
+
+    <!-- script for map -->
+    <script>
+      // Ignore
+      const floating_btn = document.querySelector(".floating-btn");
+      const close_btn = document.querySelector(".close-btn");
+      const social_panel_container = document.querySelector(
+        ".social-panel-container"
+      );
+
+      floating_btn.addEventListener("click", () => {
+        social_panel_container.classList.toggle("visible");
+      });
+
+      close_btn.addEventListener("click", () => {
+        social_panel_container.classList.remove("visible");
+      });
+    </script>
+
+    <script>
+      document
+        .querySelectorAll(".nav-tabs .nav-item button")
+        .forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            // حذف کلاس "Active" از همه دکمه‌ها
+            document
+              .querySelectorAll(".nav-tabs .nav-item button")
+              .forEach((b) => b.classList.remove("active_tab"));
+
+            // اضافه کردن کلاس "Active" فقط به دکمه‌ای که کلیک شده
+            this.classList.add("active_tab");
+          });
+        });
+    </script>
+  </body>
+</html>

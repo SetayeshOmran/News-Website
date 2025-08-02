@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N"
+      crossorigin="anonymous"
+    />
+
+    <title>درباره ما</title>
+  </head>
+  <body>
+       <!-- header -->
+
+       <div class="bg-warning cont-tarikh">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg bg-dark rounded-header">
+            <a class="navbar-brand ms-5" href="./index.html">
+              <img src="img/logo.svg" alt="" />
+            </a>
+  
+            <span class="ms-5 d tarikh">
+              <div class="text-light tarikh-font">تاریخ امروز</div>
+              <div class="tarikh-color tarikh-font">سه شنبه 17 شهریور</div>
+            </span>
+  
+            <div class="mx-auto ms-5 d-none d-lg-flex">
+              <nav class="navbar">
+                <form>
+                  <div
+                    class="input-group mx-5 p-1 rounded"
+                    style="background-color: rgb(50, 50, 50)"
+                  >
+                    <input
+                      size="20"
+                      type="text"
+                      class="form-control px-0 px-xl-5 bg-search text-black-50 border border-0 mx-5"
+                      placeholder="متن مورد نظر را جستجو کنید..."
+                      aria-label="Username"
+                      aria-describedby="basic-addon1"
+                    />
+                    <span
+                      class="input-group-text border border-0 bg-search"
+                      id="basic-addon1"
+                      ><i class="SearchIcon text-white fs-5 bi bi-search"></i
+                    ></span>
+                  </div>
+                </form>
+              </nav>
+            </div>
+  
+            <div class="d-flex justify-content-center align-content-start">
+              <button class="btn enter text-light border border-0">
+                <span
+                  ><svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 17 17"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8.27344 10.3558L10.0868 8.54246L8.27344 6.72913"
+                      stroke="white"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M2.8335 8.54248H10.0372"
+                      stroke="white"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M8.5 2.83337C11.6308 2.83337 14.1667 4.95837 14.1667 8.50004C14.1667 12.0417 11.6308 14.1667 8.5 14.1667"
+                      stroke="white"
+                      stroke-miterlimit="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span class="mx-2">ورود به حساب </span>
+              </button>
+            </div>
+          </nav>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary mt-1 py-3">
+          <div class="container-fluid ms-5">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon margin-icon">
+                <svg
+                  width="20"
+                  height="18"
+                  viewBox="0 0 15 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.572754 6.53169C0.572754 6.22565 0.838588 5.97754 1.1665 5.97754H13.8329C14.1608 5.97754 14.4266 6.22565 14.4266 6.53169C14.4266 6.83773 14.1608 7.08585 13.8329 7.08585H1.1665C0.838588 7.08585 0.572754 6.83773 0.572754 6.53169ZM3.17185 11.7038C3.17185 11.3978 3.43768 11.1497 3.7656 11.1497H13.8332C14.1611 11.1497 14.4269 11.3978 14.4269 11.7038C14.4269 12.0098 14.1611 12.258 13.8332 12.258H3.7656C3.43768 12.258 3.17185 12.0098 3.17185 11.7038ZM7.67551 1.35958C7.67551 1.05353 7.94135 0.80542 8.26926 0.80542H13.8332C14.1611 0.80542 14.4269 1.05353 14.4269 1.35958C14.4269 1.66562 14.1611 1.91373 13.8332 1.91373H8.26926C7.94135 1.91373 7.67551 1.66562 7.67551 1.35958Z"
+                    fill="#202020"
+                  />
+                </svg>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a
+                  class="nav-link text-dark ms-2 ms-xl-5 hover-nav fw-bold"
+                  aria-current="page"
+                  href="./index.html"
+                >
+                  <span 
+                    >صفحه اصلی</span
+                  >
+                </a>
+  
+                <a
+                  class="nav-link text-dark mx-3 hover-nav fw-bold"
+                  href="blog.html"
+                  >
+                  <span >
+                    مقالات
+                  </span>
+                
+                  </a
+                >
+                <a
+                  class="nav-link text-dark mx-3 hover-nav fw-bold"
+                  aria-disabled="true"
+                  href="singleblog.html"
+                  >
+                  <span >پرونده های اماری</span>
+                  
+                  
+                  </a
+                >
+                
+                <a
+                class="nav-link text-dark mx-3 hover-nav fw-bold"
+                href="poll.html"
+              >
+                نظر سنجی
+              </a>
+                <a
+                  class="nav-link text-dark mx-3 hover-nav fw-bold"
+                  href="AboutUs.html"
+                  >
+                  
+                  <span class="border-bottom border-dark border-2">
+                    درباره ما
+                  </span>
+                  
+                  </a
+                >
+                <a
+                  class="nav-link text-dark ms-3 hover-nav fw-bold"
+                  href="ContactUs.html"
+                  >
+                  <span >
+                    ارتباط با ما
+
+                  </span>
+                 
+                  </a
+                >
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+  
+      <!-- end header -->
+
+    <!-- section1  -->
+
+    <div class="container my-3 mb py-4">
+      <div class="row mb-5 pb-3 caption-cont">
+       
+          <img
+            src="img/img3.jpg"
+            class="d-block w-100 h-100 rounded-slide "
+            alt="..."
+          />
+          <div class=" d-flex justify-content-start ">
+            <div class="d-block">
+              <div class="text-start fs-4 caption-img1  text-white">
+                درباره کیو</div>
+              <div class="mt-1 text-white-50 text-white caption-img2">
+                کمی بیشتر با مجموعه ما آشنا شوید!
+              </div>
+            </div>
+          </div>
+      
+      </div>
+     
+
+
+
+
+
+      <section class="wow fadeIn animated mt-5 Counter_container" style="visibility: visible; animation-name: fadeIn;">
+        <div class="container">
+            <div class="row">
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated" data-wow-duration="300ms" style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
+                    <i class="fa fa-beer medium-icon"></i>
+                    <span id="anim-number-pizza" class="counter-number"></span>
+                    <span class="timer counter alt-font appear "  data-to="134" data-speed="7000">134</span>
+                    <p class="counter-title ">پایش‌های انجام شده</p>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated" data-wow-duration="600ms" style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
+                    <i class="fa fa-heart medium-icon"></i>
+                     <span class="timer counter alt-font appear" data-to="90" data-speed="7000">980</span>
+                    <span class="counter-title ">پرسش ‌نامه</span>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten animated" data-wow-duration="900ms" style="visibility: visible; animation-duration: 900ms; animation-name: fadeInUp;">
+                    <i class="fa fa-anchor medium-icon"></i>
+                     <span class="timer counter alt-font appear" data-to="110" data-speed="7000">810</span>
+                    <span class="counter-title ">افراد مرتبط</span>
+                </div>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp animated" data-wow-duration="1200ms" style="visibility: visible; animation-duration: 1200ms; animation-name: fadeInUp;">
+                    <i class="fa fa-user medium-icon"></i>
+                     <span class="timer counter alt-font appear" data-to="600" data-speed="7000">600</span>
+                    <span class="counter-title ">پایش‌های انجام شده</span>
+                </div>
+                <!-- end counter -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <!--end section1  -->
+
+    <!-- section2 -->
+    <div class="container my-5 py-5">
+      <div class="row justify-content-center align-content-center">
+        <div class="col-1 text-center d-flex justify-content-center ">
+          <span
+            class="rounded rounded-circle"
+            style="
+              background-color: rgba(255, 187, 0, 0.114);
+              padding: 15px 15px;
+            "
+          >
+   <img  src="img/logo2.svg" alt="">
+          </span>
+        </div>
+        <div class="col-12 text-center mt-4">
+          <span class="text-warning fs-4 fw-bold">تاریخچه</span>
+          <span class="fs-4 fw-bold"> و چرایی ما</span>
+        </div>
+        <div class="col-12 text-black-50 font-section1 text-center mt-3 px-5">
+          لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+          استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+          ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+          کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی
+          در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می
+          طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی....
+        </div>
+        <div class="col-12 text-black-50 font-section1 text-center mt-5 px-5">
+          لورم ایپسوم یا طرح‌نما به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+          صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان
+          عنصری از ترکیب بندی برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی
+          طرح سفارش گرفته شده استفاده می نماید، تا از نظر گرافیکی نشانگر چگونگی
+          نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
+          صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا
+          به مشتری یا صاحب کار خود نشان دهند که صفحه طراحی یا صفحه بندی شده بعد
+          از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و
+          اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما
+          نویسنده متن نیستند و وظیفه رعایت حق تکثیر متون را ندارند و در همان حال
+          کار آنها به نوعی وابسته به متن می‌باشد آنها با استفاده از محتویات
+          ساختگی، صفحه گرافیکی خود را صفحه‌آرایی می‌کنند تا مرحله طراحی و
+          صفحه‌بندی را به پایان برند.
+        </div>
+      </div>
+    </div>
+    <!--end section2 -->
+
+    <!-- section3 -->
+    <div class="slider">
+      <div class="slider-track">
+          <div class="slide"><img src="img/logo1.png" alt="Logo 1"></div>
+          <div class="slide"><img src="img/بانک-صادرات.png" alt="Logo 2"></div>
+         
+          <div class="slide"><img src="img/iranairlogo-0.jpg" alt="Logo 4"></div>
+          <div class="slide"><img src="img/مجموعه-وکتور-لوگو-شرکت-های-هواپیمایی-7.jpg" alt="Logo 4"></div>
+          <div class="slide"><img src="img/223-min.jpg" alt="Logo 4"></div>
+          <div class="slide"><img src="img/logo1.png" alt="Logo 1"></div>
+          <div class="slide"><img src="img/بانک-صادرات.png" alt="Logo 2"></div>
+         
+          <div class="slide"><img src="img/iranairlogo-0.jpg" alt="Logo 4"></div>
+          <div class="slide"><img src="img/مجموعه-وکتور-لوگو-شرکت-های-هواپیمایی-7.jpg" alt="Logo 4"></div>
+          <div class="slide"><img src="img/223-min.jpg" alt="Logo 4"></div>
+
+      </div>
+  </div>
+    <!-- section3 -->
+
+    <!-- footer -->
+    <div class="container-fluid py-5" style="background-color: rgb(70, 70, 70)">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-2 ms-2 text-center">
+            <img class="img-fluid" src="/img/logo.svg" alt="" />
+          </div>
+          <div
+            class="col-9 d-none d-lg-block text-white-50 lead"
+            style="font-size: 13px"
+          >
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+            استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز،
+            و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد
+            <span class="text-warning Continue">مشاهده بیشتر....</span>
+          </div>
+        </div>
+        <div
+          class="row justify-content-center align-items-center text-center mt-4"
+        >
+          <div class="col-3 d-xl-none"><hr class="text-warning" /></div>
+          <div class="col-4 col-xl-2 text-warning text-nowrap">
+            ارتباط با ما
+          </div>
+          <div class="col-3 col-xl-3"><hr class="text-warning" /></div>
+          <div
+            class="col-2 text-center justify-content-center text-warning d-none d-xl-flex"
+          >
+            نماد های الکترونیک
+          </div>
+          <div class="col-3"><hr class="text-warning d-none d-xl-flex" /></div>
+          <div class="col-2 text-warning d-none d-xl-flex">لینک های مفید</div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-6 col-xl-3 mb-5">
+            <div class="row">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i
+                  class="text-white fs-4  bi-house-door-fill"
+                  
+                ></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">آدرس دفتر:</div>
+                <div class="fontt-footer text-nowrap">
+                  تهران خیابان آزادی کوچ...
+                </div>
+              </span>
+            </div>
+            <div class="row mt-5">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i
+                  class="text-white fs-4  bi bi-telephone-fill "
+                  
+                ></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">تلفن دفتر:</div>
+                <div class="font-footer text-nowrap">۰۲۱ - ۳۱۴۹۳۲۵۷</div>
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-xl-3 mb-5">
+            <div class="row">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i
+                  class="text-white fs-2  bi bi-headphones"
+                  
+                ></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">پشتیبانی:</div>
+                <div class="font-footer">۰۹۱۲۳۴۵۶۷۸۹</div>
+              </span>
+            </div>
+            <div class="row mt-5">
+              <span class="col-xl-2 col-sm-4 col-5"
+                ><i
+                  class="text-white fs-4  bi bi-envelope-fill"
+                  
+                ></i
+              ></span>
+              <span class="col-xl-10 col-sm-8 col-7 text-white">
+                <div class="text-white-50 font-footer">آدرس ایمیل:</div>
+                <div class="font-footer" style="font-size: 13px">
+                  Info@Keyou.com
+                </div>
+              </span>
+            </div>
+          </div>
+          <div
+            class="col-2 d-none d-xl-flex align-self-center"
+            style="margin-right: -7rem"
+          >
+            <img class="img-fluid w-50 m-2 rounded-3" src="img/img21.png" alt="" />
+            <img class="img-fluid w-50 m-2 rounded-3" src="img/img211.png" alt="" />
+          </div>
+          <div
+            class="row d-xl-none mb-3 justify-content-center align-items-center text-center mt-4"
+          >
+            <div class="col-3 d-xl-none"><hr class="text-warning" /></div>
+            <div class="col-4 col-xl-2 text-warning text-nowrap">
+              لینک های مفید
+            </div>
+            <div class="col-3 col-xl-3"><hr class="text-warning" /></div>
+          </div>
+          <div
+            class="col-6 col-xl-2 d-flex justify-content-center justify-content-xl-end align-self-center"
+          >
+            <ul class="text-white">
+              <li class="text-nowrap">گزارش خرابی سایت</li>
+              <li>مجله های آماری</li>
+              <li>مقالات</li>
+            </ul>
+          </div>
+          <div
+            class="col-6 col-xl-2 d-flex justify-content-center justify-content-xl-end align-self-center"
+          >
+            <ul class="text-white">
+              <li class="text-nowrap">سوالات متداول</li>
+              <li>درباره ما</li>
+              <li>تماس با ما</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row align-items-center dir">
+          <div class="col-12 mt-5 col-xl-3 text-center text-xl-end dirr">
+            <i class="bi bi-telegram text-white fs-4 m-1" ></i>
+            <i class="bi bi-twitter text-white fs-4 m-1"></i>
+            <i class="bi bi-facebook  text-white fs-4 m-1"></i>
+            <i class="bi bi-whatsapp  text-white fs-4 m-1"></i>
+          </div>
+          <div class="col-12 mt-5 col-xl-9 dirr text-center text-xl-start">
+            <span class="text-white-50">تمامی حقوق این وبسایت برای تیم </span>
+            <span class="text-white">کیو</span>
+            <span class="text-white-50"> محفوظ است</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end footer -->
+    <!--Bootstrap Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(function() {
+          $('.counter').each(function () {
+              var $this = $(this);
+              var countTo = $this.attr('data-to'); // مقدار هدف را از data-to بگیر
+      
+              $this.prop('Counter', 0).animate({
+                  Counter: countTo
+              }, {
+                  duration: parseInt($this.attr('data-speed')) || 4000, // مقدار سرعت از data-speed
+                  easing: 'swing',
+                  step: function (now) {
+                      $this.text(Math.ceil(now));
+                  }
+              });
+          });
+      });
+      </script>
+      <script>
+        new WOW().init();
+    </script>
+  </body>
+</html>
